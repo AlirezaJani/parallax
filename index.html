@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <main class="mainn">
+      <div class="mainDiv">
+        <div class="earth-page page1"></div>
+        <div class="children">
+          <div id="text">
+          <div id="textLeft">
+            <div style="width: 80%;">Something</div>
+            <div style="font-size: 4dvw;">About</div>
+          </div>
+          <div id="textRight">
+            <div style="width: 50%; font-size: 4dvw;">the</div>
+            <div>Future</div>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+    </main>
+    <div class="template page2">
+      <!-- header -->
+      <header class="header">
+        <div class="logoDiv">
+          <figure class="logo">
+            <img src="img/footer1.png" alt="" />
+            <h1>apollo</h1>
+          </figure>
+        </div>
+        <nav>
+          <ul>
+            <li>Book</li>
+            <li>Status</li>
+            <li>About</li>
+          </ul>
+        </nav>
+        <div>
+          <img src="img/search.png" alt="" />
+          <img src="img/cart.png" alt="" />
+        </div>
+      </header>
+      <!-- sections -->
+      <!-- first sec -->
+      <section class="firstSection">
+        <div class="titles">
+          <h1>Stay at Peace</h1>
+          <div class="para">
+            <h4>What a beautiful day</h4>
+            <h4>Leading into night</h4>
+            <h4>You ain’t gotta cry baby</h4>
+            <h4>We ain’t gotta fight</h4>
+          </div>
+          <button class="button">Fly Now</button>
+        </div>
+      </section>
+      <!-- seceond sec -->
+      <section class="secoendSEC">
+        <div class="mainBg">
+          <div class="starsPic">
+            <div class="montainPic"><img src="img/mountains.png" alt="" /></div>
+            <div class="cityPic"><img src="img/city.png" alt="" /></div>
+            <div class="cloudPic"><img src="img/clouds.png" alt="" /></div>
+            <div class="window">
+              <h3>There ain’t no things like fantasies</h3>
+              <h3>There’s only real life</h3>
+            </div>
+          </div>
+        </div>
+        <div class="LPage">
+          <div class="stars-container">
+            <div class="stars"></div>
+            <div class="stars2"></div>
+            <div class="stars3"></div>
+          </div>
+          <div class="text">
+            <h3>No peace</h3>
+            <h3>no life</h3>
+            <h3>Know peace</h3>
+            <h3>know life</h3>
+          </div>
+          <footer class="foot">
+            <h4>@2025 - Alireza Jani</h4>
+            <div class="socail">
+              <a href="https://github.com/AlirezaJani">Github</a>
+              <a href="https://www.linkedin.com/in/alireza-jani-862ba8333/">Linkedin</a>
+            </div>
+
+          </footer>
+
+        </div>
+      </section>
+    </div>
+  </body>
+  <script>
+    const earthPage = document.querySelector(".earth-page");
+    const children = document.querySelector(".children");
+    const mainBg = document.querySelector(".mainBg");
+    const template = document.querySelector(".template");
+    const mainn = document.querySelector(".mainn");
+
+    let maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    let currentScroll = Math.floor((window.scrollY * 100) / maxScroll);
+
+    window.addEventListener("scroll", () => {
+      currentScroll = Math.floor((window.scrollY * 100) / maxScroll) / 2;
+
+      children.style.transform = `scale(${1 + currentScroll / 1})`;
+      earthPage.style.backgroundPosition = `center -${(currentScroll * 1) / 20}px`;
+
+
+      /////////تکون خوردن ابرها و خونه ها با اسکرول/////////
+      let scrollY = window.scrollY;
+      let moveX = (scrollY % 100) - 50; // حرکت رفت و برگشتی
+      let moveX2 = (scrollY % 100) - 50; // حرکت رفت و برگشتی
+      document.querySelector(".cloudPic").style.transform = `translateX(${moveX}px)`;
+      document.querySelector(".cityPic").style.transform = `translateX(${-moveX2}px)`;
+
+      // //////////////////// رفتن از صفحه اول به دوم بصورت خودکار ///////////////////////////
+      if (scrollY >= earthPage.offsetHeight && scrollY < template.offsetTop) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: template.offsetTop,
+            behavior: "smooth",
+          });
+        }, 100);
+
+        setTimeout(() => {
+          mainn.style.display = "none"; //حذف صفحه اول
+        }, 500);
+      } else {
+
+        window.scrollTo({
+          top: scrollY,
+          behavior: "smooth",
+        });
+        
+      }
+
+      window.addEventListener("resize", () => {
+        maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      });
+    });
+
+    // وقتی صفحه رفرش میشه پارالاکس از اول دوباره نمایش داده بشه//
+    window.history.scrollRestoration = "manual";
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+    window.onload = function() {
+        window.scrollTo(0, 0);
+    };
+  </script>
+</html>
+
+

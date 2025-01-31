@@ -1,0 +1,451 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: fit-content;
+  overflow-x: hidden;
+  background-color: black;
+  scroll-behavior: smooth;
+}
+main {
+  width: 100%;
+  height: 250vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  position: relative;
+  transition: transform 1s ease;
+}
+.mainDiv {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0%;
+  overflow: hidden;
+}
+.earth-page {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 0px;
+  filter: blur(0.5px);
+  transition: transform 1s ease;
+}
+.children {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/Sin\ nombre.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  transition: all 0.8s;
+  overflow: hidden;
+  object-fit: cover;
+}
+/* sections */
+.template {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-image: url(../img/firstSec.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s ease;
+}
+/* header */
+.header {
+  margin: 0px auto;
+  width: 80%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  > .logoDiv {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    color: white;
+
+    > .logo {
+      object-fit: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+
+      > img {
+        object-fit: cover;
+        width: 80px;
+        height: 80px;
+      }
+    }
+    > h1 {
+      color: white;
+      font-weight: 900;
+      font-size: 30px;
+    }
+  }
+  > nav {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    height: 100%;
+    color: white;
+    transition: background-color 0.5s;
+    > ul {
+      margin: 10px auto;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 70px;
+
+      > li {
+        cursor: pointer;
+        color: white;
+        font-weight: 900;
+        font-size: 20px;
+        text-decoration: none;
+        transition: color 0.5s;
+      }
+    }
+  }
+  > div {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+    color: white;
+    transition: background-color 0.5s;
+    gap: 25px;
+    > img {
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+/* first sec */
+
+.firstSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  > .titles {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    * {
+      color: aliceblue;
+    }
+    > h1 {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 44px;
+      letter-spacing: 2px;
+    }
+    > .para {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+
+      > h4 {
+        letter-spacing: 2px;
+
+        font-style: italic;
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        line-height: 26px;
+      }
+    }
+  }
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 120px;
+  height: 50px;
+  cursor: pointer;
+  align-items: center;
+  border-style: none;
+  border-width: 3px;
+  border-color: #fb7470;
+  border-radius: 7px;
+  background-color: #5538ab;
+  text-decoration: none;
+}
+/* second sec */
+.secoendSEC {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/starbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  > .mainBg {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease;
+  }
+}
+.starsPic {
+  width: 50%;
+  height: 70%;
+  background-image: url(../img/stars.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 0px;
+  transition: all 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.montainPic {
+  width: 50%;
+  height: 50%;
+  margin-top: 200px;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.8s;
+  overflow: hidden;
+  object-fit: cover;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.cityPic {
+  width: 50%;
+  height: 50%;
+  margin-top: 200px;
+  position: absolute;
+  z-index: 12;
+  transition: all 0.8s;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.cloudPic {
+  width: 70%;
+  height: 70%;
+  margin-bottom: 300px;
+  position: absolute;
+  z-index: 13;
+  transition: all 0.8s;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.window {
+  margin: 10px auto;
+  width: 1055px;
+
+  height: 550px;
+  background-image: url(../img/window.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+  transition: transform 1s ease;
+  > h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+.LPage {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: #020305;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  overflow: hidden;
+}
+
+.stars, .stars2, .stars3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  animation: moveStars 50s linear infinite;
+}
+
+.stars {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.stars2 {
+  background: url('https://www.transparenttextures.com/patterns/tiny-cross-hatch.png');
+  animation-duration: 100s;
+}
+
+.stars3 {
+  background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+  animation-duration: 150s;
+  overflow-y: hidden;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  >h3{
+    color: rgba(255, 255, 255, 0.8);
+    font-family: sans-serif;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 20px;
+
+  }
+}
+.foot{
+  width: 70%;
+  height: 150px;
+  background-color:transparent;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+ 
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  *{
+    color: rgba(255, 255, 255, 0.729);
+    text-decoration: none;
+
+  }
+  >h4{
+    font-size: 12px;
+
+  }
+  >.socail{
+    
+    cursor: pointer;
+    font-size: 12px;
+
+    display: flex;
+    font-weight: 800;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+  }
+}
+#text {
+
+  width: 100%;
+  height: 100%;
+
+  color: white;
+
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 5dvw;
+  transition: all 0.8s;
+  filter: blur(0.7px);
+}
+
+#textLeft{
+
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;       
+
+}
+
+#textRight{
+
+  width: 80%;
+  height: 30%;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+
+
+}
